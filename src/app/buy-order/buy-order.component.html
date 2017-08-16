@@ -1,0 +1,139 @@
+<div class="background">
+  <div class="buy-order">
+    <div>
+      <p class="buy-title">中懋国际大酒店</p>
+      <p class="room-desc"><span>08-15</span>入住， <span>08-16</span>离店，<span>1</span>晚</p>
+      <p class="room-desc"><span>标准大床房-大床</span>，不含早，共￥<span>218</span></p>
+    </div>
+    <div class="desc-info clearfix">
+      <div class="icon-left">
+        <i class="icon-warn origin icon-css">⚠</i>
+      </div>
+      <span>订单确认后即视为消费，<em class="origin">不支持7天无理由退款</em>。房间整晚保留，请及时入住。</span>
+    </div>
+  </div>
+  <section class="room-msg">
+    <div class="cell">
+      <div class="room-count button-icon" (click)="showRoomNumSelectorPanel()">
+        <span class="live-key">房间数</span>
+        <span class="live-num black">{{showNum}}间</span>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="room-count">
+        <span class="live-key">入住人</span>
+        <span class="live-num black">张先生</span>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="room-count button-icon" (click)="showRoomTimeSelectorPanel()">
+        <span class="live-key">预计到店</span>
+        <span class="live-num black">{{showTimeText}}</span>
+      </div>
+    </div>
+    <div class="cell del-line">
+      <div class="room-count">
+        <span class="live-key">联系手机</span>
+        <span class="live-num black">18922074783</span>
+      </div>
+    </div>
+  </section>
+  <section class="discount room-msg">
+    <div class="cell">
+      <div class="room-count button-icon">
+        <span class="live-key"><i class="card-icon">券</i>抵用券</span>
+        <span class="live-num card-use black">使用抵用券</span>
+      </div>
+    </div>
+  </section>
+  <section class="insurance">
+    <div class="discount room-msg unless-margin">
+      <div class="room-count">
+        <span class="live-key black">取消险<div class="icon-left">
+        <i class="icon-warn green-border green">!</i>
+      </div></span>
+        <span class="live-num gray">收取<i class="green">￥{{showNum*11}}</i><i class="price-desc">(最高赔付90%的房费)</i></span>
+        <input id="insur-checkbox" type="checkbox" class="insur-checkbox">
+        <label for="insur-checkbox" (click)="handleInsur()"> 
+          <i class="rm-icon yes-position" [ngStyle]="{'display': showInsur ? 'block':'none'}"></i>
+        </label>
+      </div>
+    </div>
+    <div class="detail h5height-transition" *ngIf="showInsur">
+      <div class="detail-item"> <span class="detail-title">保额</span>
+        <div class="detail-content"> <span>因客观原因未入住，出示依据后根据实际情况赔付，可最高赔付因未如期入住酒店所损失房费的90%</span> <a class="detail-link" href="https://i.meituan.com/awp/h5/hotel/insurance/cancellation.html"> <span class="detail-link-content"   >查看赔付细则</span> </a>          </div>
+      </div>
+      <div class="detail-item"> <span class="detail-title">退款说明</span> <span class="detail-content">超过订单取消时间，则不可退保</span> </div>
+      <div class="detail-item"> <span class="detail-title">被保险人</span> <span class="detail-content">订单中的所有入住人</span> </div>
+      <div class="detail-item"> <span class="detail-title">保险时间</span> <span class="detail-content">投保成功至离店当日12点</span> </div>
+    </div>
+  </section>
+  <section class="no-invoice">
+    <p class="inv-tipe">
+      <i class="icon-warn origin">⚠</i> 索取发票请到酒店前台
+    </p>
+  </section>
+  <section class="all-price" [ngStyle]="{'z-index':showPriceDesc?'999999':'22'}">
+    <section class="detail select-transition" *ngIf="showPriceDesc">
+      <p class="header">明细</p>
+      <div class="body">
+        <div class="cell">
+          <div class="room">
+            <div class="room-title"> <span class="line-key"  >房费</span> <span class="line-val"  >¥218</span> </div>
+            <div class="room-detail"> <span class="room-date"  >2017-08-16</span> <span class="room-breakfast"  >不含早</span>              <span class="room-price"  >1 X ¥218</span> </div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="line"> <span class="line-key"  >取消险</span> <span class="line-val"  >¥11</span> </div>
+        </div>
+        <div class="cell">
+          <div class="line"> <span class="line-key"  >总价</span> <span class="line-val"  >¥229</span> </div>
+        </div>
+      </div>
+    </section>
+    <div class="warpper">
+      <div class="price-num">
+        <span class="total-desc">总价: <i class="green size">￥{{showNum*218}}</i> <a class="allPrice-desc" (click)="handlePriceDesc()">明细</a></span>
+      </div>
+      <div class="btn-submit">
+        <span>提交订单</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--弹出层-->
+<section *ngIf="showRoomNumSelector" class="rm-alert detail">
+  <p class="header">请选择房间数量</p>
+  <ul (click)="selected($event)">
+    <li class="cell" *ngFor="let item of arr, let i = index">
+      <div id="rm-item{{i+1}}" class="rm-item" [ngStyle]="{'color': i+1==showNum ? '#06c1ae' : ''}"><span>{{item}}间</span> <i [ngStyle]="{'display': i+1==showNum ? 'block': 'none'}" class="rm-icon"></i></div>
+    </li>
+    <!--<li class="cell">
+      <div class="rm-item" [style.color]="''"><span>2间</span> <i [style.display]="'none'" class="rm-icon"></i></div>
+    </li>
+    <li class="cell">
+      <div class="rm-item" [style.color]="''"><span>3间</span> <i [style.display]="'none'" class="rm-icon"></i></div>
+    </li>-->
+  </ul>
+</section>
+
+<section *ngIf="showRoomTimeSelector" class="rm-alert detail">
+  <p class="header">到店时间（不影响酒店留房）</p>
+  <ul (click)="selected($event)">
+    <li class="cell">
+      <div id="time-item1" class="rm-item" [ngStyle]="{'color': 1==showTime ? '#06c1ae' : ''}"><span>18：00之前</span> <i [ngStyle]="{'display': 1==showTime ? 'block': 'none'}" class="rm-icon"></i></div>
+    </li>
+    <li class="cell">
+      <div id="time-item2" class="rm-item" [ngStyle]="{'color': 2==showTime ? '#06c1ae' : ''}"><span>20：00之前</span> <i [ngStyle]="{'display': 2==showTime ? 'block': 'none'}" class="rm-icon"></i></div>
+    </li>
+    <li class="cell">
+      <div id="time-item3" class="rm-item" [ngStyle]="{'color': 3==showTime ? '#06c1ae' : ''}"><span>23：59之前</span> <i [ngStyle]="{'display': 3==showTime ? 'block': 'none'}" class="rm-icon"></i></div>
+    </li>
+    <li class="cell">
+      <div id="time-item4" class="rm-item" [ngStyle]="{'color': 4==showTime ? '#06c1ae' : ''}"><span>次日凌晨06：00之前</span> <i [ngStyle]="{'display': 4==showTime ? 'block': 'none'}" class="rm-icon"></i></div>
+    </li>
+  </ul>
+</section>
+
+<div *ngIf="showOverlay" class="overlay" (click)="closeAllPanel()"></div>
