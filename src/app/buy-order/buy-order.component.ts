@@ -35,6 +35,7 @@ export class BuyOrderComponent implements OnInit {
   closeAllPanel() {
     this.showRoomNumSelector = false;
     this.showRoomTimeSelector = false;
+    this.showPriceDesc = false;
     this.showOverlay = false;
   }
 

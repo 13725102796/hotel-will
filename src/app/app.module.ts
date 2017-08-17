@@ -7,12 +7,14 @@ import { EstimateComponent } from './estimate/estimate.component';
 
 // 路由
 import { AppRoutingModule } from './app-routing.module';
+import { HotelComponent } from './hotel/hotel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuyOrderComponent,
-    EstimateComponent
+    EstimateComponent,
+    HotelComponent
 
   ],
   imports: [

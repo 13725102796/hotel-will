@@ -85,3 +85,13 @@ body {
     color: #000;
     font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft YaHei", hei;
 }
+.clearfix:after {
+    content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+}
+
+.clearfix {
+	zoom: 1;
+}

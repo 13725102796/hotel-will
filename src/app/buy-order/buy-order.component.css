@@ -402,6 +402,9 @@ ul,li,p{
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
+.room-count input {
+    border: 0;
+}
 
 
 
