@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { fadeIn } from './../animate/fadeIn';
+import { handleMask } from './../animate/handleMask';
 @Component({
   selector: 'app-buy-order',
   templateUrl: './buy-order.component.html',
-  styleUrls: ['./buy-order.component.css']
+  styleUrls: ['./buy-order.component.css'],
+  animations: [fadeIn, handleMask]
 })
 export class BuyOrderComponent implements OnInit {
   // @Input() dataNum;

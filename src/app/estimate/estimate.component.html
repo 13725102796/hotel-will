@@ -1,0 +1,157 @@
+<section>
+  <div class="wrapper comments-withlabel-head" style="padding-top: .1rem;">
+    <ul class="label-container" id="J-label-container" (click)="handleTitleColor($event)">
+      <li class="label  label-positive">
+        <span class="label-text">位置好</span>
+        <span class="label-count">69</span>
+      </li>
+      <li class="label  label-positive">
+        <span class="label-text">服务热情</span>
+        <span class="label-count">51</span>
+      </li>
+      <li class="label  label-positive">
+        <span class="label-text">干净卫生</span>
+        <span class="label-count">50</span>
+      </li>
+      <li class="label  label-positive">
+        <span class="label-text">交通便利</span>
+        <span class="label-count">46</span>
+      </li>
+      <li class="label  label-positive">
+        <span class="label-text">环境优雅</span>
+        <span class="label-count">42</span>
+      </li>
+      <li class="label  label-positive">
+        <span class="label-text">温馨浪漫</span>
+        <span class="label-count">12</span>
+      </li>
+      <li class="label  label-positive">
+        <span class="label-text">早餐赞</span>
+        <span class="label-count">9</span>
+      </li>
+      <li class="label  label-not-positive">
+        <span class="label-text">房间小</span>
+        <span class="label-count">33</span>
+      </li>
+      <li class="label  label-not-positive">
+        <span class="label-text">价格高</span>
+        <span class="label-count">15</span>
+      </li>
+      <li class="label  label-not-positive">
+        <span class="label-text">隔音差</span>
+        <span class="label-count">15</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<section>
+  <dd class="dd-padding">
+    <div class="feedbackCard">
+      <div class="user-wrapper">
+        <div class="user-pic">
+          <div class="imgbox">
+            <img src="./../assets/img/user.png">
+          </div>
+        </div>
+        <div class="user-info-text">
+          <div class="userInfo">
+            <p class="username">K***0</p>
+          </div>
+          <div class="score">
+            <span class="stars"><i class="text-icon icon-star"></i><i class="text-icon icon-star"></i><i class="text-icon icon-star"></i><i class="text-icon icon-star"></i><i class="text-icon icon-star"></i></span>
+
+            <p class="time">2017-07-25</p>
+          </div>
+        </div>
+      </div>
+      <div class="comment">
+        <p>七天改的</p>
+      </div>
+      <div class="pics">
+        <span class="pic-container imgbox">
+          <img class="commitPhoto" src="./../assets/img/user.png">
+        </span>
+      </div>
+      <div class="block-reply">
+        <div class="block-reply-head">商家回复：
+          <p class="reply-time">2017-08-02</p>
+        </div>
+        <p>尊敬的客人，感谢您选择我们酒店并给予好评，欢迎您下次再来！谢谢！</p>
+      </div>
+    </div>
+  </dd>
+  <dd class="dd-padding">
+    <div class="feedbackCard">
+      <div class="user-wrapper">
+        <div class="user-pic">
+          <div class="imgbox">
+            <img src="./../assets/img/user.png">
+          </div>
+        </div>
+        <div class="user-info-text">
+          <div class="userInfo">
+            <p class="username">K***0</p>
+          </div>
+          <div class="score">
+            <span class="stars"><i class="text-icon icon-star"></i><i class="text-icon icon-star"></i><i class="text-icon icon-star"></i><i class="text-icon icon-star"></i><i class="text-icon icon-star"></i></span>
+
+            <p class="time">2017-07-25</p>
+          </div>
+        </div>
+      </div>
+      <div class="comment">
+        <p>七天改的</p>
+      </div>
+      <div class="pics">
+        <span class="pic-container imgbox">
+          <img class="commitPhoto" src="./../assets/img/user.png">
+        </span>
+      </div>
+      <div class="block-reply">
+        <div class="block-reply-head">商家回复：
+          <p class="reply-time">2017-08-02</p>
+        </div>
+        <p>尊敬的客人，感谢您选择我们酒店并给予好评，欢迎您下次再来！谢谢！</p>
+      </div>
+    </div>
+  </dd>
+</section>
+<section>
+  <form id="form" method="post" action="">
+    <input type="hidden" name="orderid" value="2511839357" />
+    <div class="list">
+      <dd class="dd-padding">
+        <h6 class="unname">总评</h6>
+        <div class="score stars">
+          <label>
+                    <input type="radio" class="score_1" value="1" name="score" />
+                    <span>很不满意</span>
+                </label>
+          <label>
+                    <input type="radio" class="score_2" value="2" name="score" />
+                    <span>不满意</span>
+                </label>
+          <label>
+                    <input type="radio" class="score_3" value="3" name="score" />
+                    <span>一般</span>
+                </label>
+          <label>
+                    <input type="radio" class="score_4" value="4" name="score" />
+                    <span>满意</span>
+                </label>
+          <label>
+                    <input type="radio" class="score_5" value="5" name="score" />
+                    <span>非常满意</span>
+                </label>
+        </div>
+      </dd>
+    </div>
+    <dl class="list">
+      <div class="textHeight">
+        <textarea name="comment" class="input-weak" placeholder="说说本次团购的亮点和不足吧！（写够15字，才是好同志～）"></textarea>
+      </div>
+    </dl>
+    <div class="btn-wrapper"><button type="submit"  class="">发布</button>
+    </div>
+  </form>
+</section>

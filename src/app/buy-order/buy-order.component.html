@@ -74,7 +74,7 @@
     </p>
   </section>
   <section class="all-price" [ngStyle]="{'z-index':showPriceDesc?'999999':'22'}">
-    <section class="detail select-transition" *ngIf="showPriceDesc">
+    <section class="detail select-transition" *ngIf="showPriceDesc" @fadeIn>
       <p class="header">明细</p>
       <div class="body">
         <div class="cell">
@@ -93,7 +93,7 @@
     </section>
     <div class="warpper">
       <div class="price-num">
-        <span class="total-desc">总价: <i class="green size">￥{{showNum*218}}</i> <a class="allPrice-desc" (click)="handlePriceDesc()">明细</a></span>
+        <span class="total-desc">总价: <i class="green size">￥{{ showInsur? showNum*(218+11):showNum*218}}</i> <a class="allPrice-desc" (click)="handlePriceDesc()">明细</a></span>
       </div>
       <div class="btn-submit">
         <span>提交订单</span>
@@ -103,7 +103,7 @@
 </div>
 
 <!--弹出层-->
-<section *ngIf="showRoomNumSelector" class="rm-alert detail">
+<section *ngIf="showRoomNumSelector" class="rm-alert detail" @fadeIn>
   <p class="header">请选择房间数量</p>
   <ul (click)="selected($event)">
     <li class="cell" *ngFor="let item of arr, let i = index">
@@ -118,7 +118,7 @@
   </ul>
 </section>
 
-<section *ngIf="showRoomTimeSelector" class="rm-alert detail">
+<section *ngIf="showRoomTimeSelector" class="rm-alert detail" @fadeIn>
   <p class="header">到店时间（不影响酒店留房）</p>
   <ul (click)="selected($event)">
     <li class="cell">
@@ -135,5 +135,5 @@
     </li>
   </ul>
 </section>
-
-<div *ngIf="showOverlay" class="overlay" (click)="closeAllPanel()"></div>
+<!-- 遮罩层 -->
+<div *ngIf="showOverlay" class="overlay" (click)="closeAllPanel()" @handleMask></div>
