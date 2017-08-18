@@ -1,0 +1,64 @@
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+
+.vue-component-calendar-complete-button {
+    float: right;
+    margin-right: .6rem;
+}
+.vue-component-calendar-complete-button a {
+    color: #2eb6a8;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: .3rem .6rem;
+    border: .2rem solid #2eb6a8;
+    border-radius: .6rem;
+}
+
+.well.well-sm.bg-faded.p-a.card {
+    width: 100%;
+    
+}
+  :host /deep/ table {
+    width:100%!important;
+  }
+  :host /deep/ th.text-center {
+    color: #666;
+    -webkit-box-flex: 1;
+    flex: auto;
+    list-style: none;
+    text-align: center;
+}
+ :host /deep/ pre {
+   color:#666;
+   font-size: 1rem;
+   border-bottom: 1px solid #2eb6a8;
+   margin: 0;
+   padding: 1.1rem;
+ }
+:host /deep/ pre em {
+   color: #2eb6a8
+}
+
+:host /deep/ .text-center small b {
+  color:#666;
+  font-size: 1.3rem; 
+  font-weight: 500;
+}
+ :host /deep/ button.btn.btn-sm.btn-default {
+    /*display: inline-block;
+    width: 14%;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    position: relative;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    color: #333;*/
+ }

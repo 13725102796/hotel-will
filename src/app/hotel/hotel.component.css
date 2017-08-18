@@ -183,3 +183,128 @@ section{
     color: #999;
     font-size: .24rem;
 }
+
+/*ht-predit*/
+.ht-predit {
+    width: 30%;
+    padding: 1rem .8rem;
+}
+
+.bookroom-title-icon {
+    display: inline-block;
+    height: .8rem;
+    line-height: .8rem;
+    width: .8rem;
+    margin-right: .2rem;
+    border: 1px solid;
+    border-radius: .06rem;
+    text-align: center;
+    font-size: .4rem;
+    color: #e41616;
+    background-color: #fff;
+}
+
+.room {
+    display: -webkit-box;
+    display: flex;
+}
+
+.item {
+    margin: .6rem 0 0 .8rem;
+    padding-bottom: .6rem;
+    border-bottom: 1px solid #e5e5e5;
+    color: #999;
+    line-height: normal;
+}
+.room-left {
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+.room-right {
+    position: relative;
+    width: 5.2rem;
+    text-align: center;
+}
+
+.room-left-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #333;
+}
+.room-desc {
+    font-size: .8rem;
+    color: #999;
+    padding: .1rem 0;
+}
+.price {
+    position: relative;
+    color: #06c1ae;
+    font-size: .8rem;
+}
+
+.textico-gray {
+    display: inline-block;
+    height: .8rem;
+    line-height: .8rem;
+    padding: 0 .1rem;
+    border: 1px solid;
+    border-radius: .1rem;
+    text-align: center;
+    font-size: .6rem;
+    color: #999;
+    background-color: #fff;
+}
+
+.tags-item:not(:last-child) {
+    padding-right: .2rem;
+    border-right: 1px solid #e5e5e5;
+}
+
+.tags-item {
+    display: inline-block;
+    font-size: .8rem;
+    line-height: .6rem;
+    height: .6rem;
+}
+.price-num {
+    font-size: 1.2rem;
+}
+
+.room-right-center {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.room-right-redtip {
+    font-size: .8rem;
+    color: #e41616;
+    margin-bottom: .3rem;
+}
+
+.room-button, .room-button-disabled {
+    height: 1.8rem;
+    width: 4.2rem;
+    color: #fff;
+    font-size: .8rem;
+    border: transparent;
+}
+.room-button {
+    background-color: #f90;
+}
+/*日历控件css*/
+.vue-component-calendar-complete-button {
+    float: right;
+    margin-right: .6rem;
+}
+.vue-component-calendar-complete-button a {
+    color: #2eb6a8;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: .3rem .6rem;
+    border: .2rem solid #2eb6a8;
+    border-radius: .6rem;
+}
