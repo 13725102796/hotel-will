@@ -16,14 +16,15 @@ const routes: Routes = [
   },{
     path: 'estimate',
     component: EstimateComponent
-  },{
-    path: 'buyorder',
-    component: BuyOrderComponent
-    //  data: {},
-    //  children:[
-    //    { path: 'detail', loadChildren: 'app/buy-order/buy-order.module#BuyOrderModule', data: { pageTitle: '系统设置' } }
-    //  ]
   }
+  // ,{
+  //   path: 'buyorder',
+  //   component: BuyOrderComponent
+  //   //  data: {},
+  //   //  children:[
+  //   //    { path: 'detail', loadChildren: 'app/buy-order/buy-order.module#BuyOrderModule', data: { pageTitle: '系统设置' } }
+  //   //  ]
+  // }
 ]
 
 

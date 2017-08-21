@@ -7,19 +7,11 @@ import { BuyOrderComponent } from './buy-order.component';
 const routes: Routes = [
   {
     path: 'buyorder',
-    component: BuyOrderComponent,
-    children: [
-      {
-        path: 'detail',
-        component: DetailComponent,
-        children: [
-          {
-            path: 'detail',
-            component: DetailComponent
-          }
-        ]
-      }
-    ]
+    component: BuyOrderComponent
+  },
+  {
+    path: 'buyorder/detail',
+    component: DetailComponent
   }
 ];
 
