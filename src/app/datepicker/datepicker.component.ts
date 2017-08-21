@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import * as moment from 'moment';
 @Component({
   selector: 'app-datepicker',
@@ -6,7 +6,50 @@ import * as moment from 'moment';
   styleUrls: ['./datepicker.component.css']
 })
 export class DatepickerComponent {
-  public initDt: Date = new Date();
+  @Input() tomTime: any;
+  @Output() onVoted = new EventEmitter();
+  // vote(agreed: boolean) {
+  //   this.onVoted.emit(agreed);
+  //   this.voted = true;
+  // }
+  public usewho: boolean = false;
+  public todayInit: Date = new Date();
+  public tomorrowInit = new Date().setTime(new Date().getTime()+24*60*60*1000);
+  ngOnInit() {
+      this.usewho = false;
+      if(this.tomTime || this.tomTime == 1){
+        this.usewho = true;
+      }
+  }
+  todayTime() {
+    var Time = {}
+    if (this.tomTime || this.tomTime == 1) {
+      var month = (this.dt.getMonth() + 1).toString();
+      month = "0" + month;
+      var tomorrow = (this.dt.getDate()).toString();
+      var tomorrowTime = month + "月" + tomorrow + "日";
+      Time = {
+        tomorrow: tomorrowTime
+      }
+      this.onVoted.emit(Time);
+    } else {
+      var month = (this.dt.getMonth() + 1).toString();
+      month = "0" + month;
+      var day = (this.dt.getDate()).toString();
+      var tomorrow = (this.dt.getDate() + 1).toString();
+      var time = month + "月" + day + "日";
+      var tomorrowTime = month + "月" + tomorrow + "日";
+      Time = {
+        time: time,
+        tomorrow: tomorrowTime
+      }
+      this.onVoted.emit(Time);
+    }
+
+  }
+
+
+
   public dt: Date = new Date();
   public minDate: Date = void 0;
   public events: any[];
@@ -84,6 +127,6 @@ export class DatepickerComponent {
     this.dt = new Date(this.minDate.valueOf());
   }
 
-  
+
 
 }

@@ -1,10 +1,10 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <div>
   <div class="card">
-    <pre class="card-block card-header">当前选择的时间是： <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em><div class="vue-component-calendar-complete-button"> <a href="javascript:;">完成</a> </div></pre>
+    <pre class="card-block card-header">当前选择的时间是： <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em><div class="vue-component-calendar-complete-button"> <a href="javascript:;" (click)="todayTime()">完成</a> </div></pre>
   </div>
   <div style="display:inline-block; min-height:290px;width:100%; text-align: center;">
-    <datepicker [minDate]="initDt" [onlyCurrentMonth]="true" [showWeeks]="false" [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled" ></datepicker>
+    <datepicker [minDate]=" usewho ? todayInit : tomorrowInit " [onlyCurrentMonth]="true" [showWeeks]="false" [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled" ></datepicker>
   </div>
   <!--<hr />-->
   <!--<button type="button" class="btn btn-sm btn-info" (click)="today()">Today</button>
@@ -12,4 +12,4 @@
   <button type="button" class="btn btn-sm btn-danger" (click)="clear()">Clear</button>
   <button type="button" class="btn btn-sm btn-default btn-secondary" (click)="toggleMin()" tooltip="After today restriction">Min date</button>
   <button type="button" class="btn btn-sm btn-default btn-secondary" (click)="disableTomorrow()">Disable Tomorrow</button>-->
-</div>
+</div>.

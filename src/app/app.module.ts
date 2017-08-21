@@ -9,21 +9,25 @@ import { EstimateComponent } from './estimate/estimate.component';
 
 // 路由
 import { AppRoutingModule } from './app-routing.module';
+import { BuyOrderModule } from './buy-order/buy-order.module';
 import { HotelComponent } from './hotel/hotel.component';
 
 //ngx-boostrap
 import { DatepickerModule } from 'ngx-bootstrap';
 import { DatepickerComponent } from './datepicker/datepicker.component';
+import { DetailComponent } from './hotel/detail/detail.component';
 @NgModule({
   declarations: [
     AppComponent,
     BuyOrderComponent,
     EstimateComponent,
     HotelComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    DetailComponent
 
   ],
   imports: [
+    BuyOrderModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

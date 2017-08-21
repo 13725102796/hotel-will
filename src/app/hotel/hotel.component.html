@@ -34,21 +34,64 @@
     <div class="datebox-wrap">
       <div class="datebox-left" (click)="showDate()" @fadeIn>
         <div class="datebox-desc"> 入住 </div>
-        <div class="datebox-time"> 08月17日 今天 </div>
+        <div class="datebox-time"> {{todayTime}} </div>
       </div>
-      <div class="datebox-right">
+      <div class="datebox-right" (click)="showDate(tomorrow)" @fadeIn>
         <div class="datebox-desc"> 离店 </div>
-        <div class="datebox-time"> 08月18日 明天 </div>
+        <div class="datebox-time"> {{tomorrow}} </div>
       </div>
     </div>
     <div class="datebox-count"> 共1晚 </div>
   </div>
 </section>
 <section>
-  <div class="ht-predit">
-    <span class="bookroom-title-icon">订</span> 预订&nbsp;[8]
+  <div class="clearfix">
+  <div class="ht-predit left" [class.ht-active]="showPage === 'ht-predit'"  id="ht-predit" (click)="handleShowPage($event)">
+    <!--<i class="bookroom-title-icon">订</i> 预订&nbsp;[8]-->
+    预订&nbsp;[8]
   </div>
-  <ul>
+  <div class="ht-detail ht-predit left" [class.ht-active]="showPage === 'ht-detail'" id="ht-detail" (click)="handleShowPage($event)">
+     酒店详情
+  </div>
+  <div class="ht-common ht-predit left" [class.ht-active]="showPage === 'ht-common'" id="ht-common" (click)="handleShowPage($event)">
+     酒店评价
+  </div>
+  </div>
+  <ul *ngIf="showPage === 'ht-predit'">
+    <li class="item room">
+      <div class="room-left">
+        <p class="room-left-title">标准大床房 <span class="textico-gray" style="display: none;"></span> </p>
+        <ul class="tags">
+          <li class="tags-item" style="color: rgb(153, 153, 153);">不含早</li>
+          <li class="tags-item" style="color: rgb(153, 153, 153);">有窗</li>
+        </ul>
+        <div class="room-desc"> 现已过可取消时间，不可取消 </div>
+        <h2 class="price">¥ <span class="price-num">218</span> </h2>
+        <ul style="display: none;"> </ul>
+      </div>
+      <div class="room-right">
+        <div class="room-right-center">
+          <div class="room-right-redtip" style="display: none;"> </div>
+          <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> <button class="room-button" type="button" name="button">预订</button> </div>
+      </div>
+    </li>
+    <li class="item room">
+      <div class="room-left">
+        <p class="room-left-title">标准大床房 <span class="textico-gray" style="display: none;"></span> </p>
+        <ul class="tags">
+          <li class="tags-item" style="color: rgb(153, 153, 153);">不含早</li>
+          <li class="tags-item" style="color: rgb(153, 153, 153);">有窗</li>
+        </ul>
+        <div class="room-desc"> 现已过可取消时间，不可取消 </div>
+        <h2 class="price">¥ <span class="price-num">218</span> </h2>
+        <ul style="display: none;"> </ul>
+      </div>
+      <div class="room-right">
+        <div class="room-right-center">
+          <div class="room-right-redtip" style="display: none;"> </div>
+          <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> <button class="room-button" type="button" name="button">预订</button> </div>
+      </div>
+    </li>
     <li class="item room">
       <div class="room-left">
         <p class="room-left-title">标准大床房 <span class="textico-gray" style="display: none;"></span> </p>
@@ -67,11 +110,18 @@
       </div>
     </li>
   </ul>
+  <ul *ngIf="showPage ==='ht-detail'">
+    <app-detail></app-detail>
+  </ul>
+  <ul *ngIf="showPage ==='ht-common'" >
+    <app-estimate></app-estimate>
+  </ul>
+
 </section>
 
 <!--日历弹出层-->
 <section *ngIf="handleDate" style="z-index: 99999; position:fixed; bottom:-75px;">
-  <app-datepicker></app-datepicker>
+  <app-datepicker (onVoted)="onVoted($event)" [tomTime]="data" ></app-datepicker>
 </section>
 <!--遮罩层-->
 <div *ngIf="showOverlay" style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.5);z-index: 999;" (click)="closeAllPanel()" @handleMask></div>

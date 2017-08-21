@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DatepickerComponent } from './../datepicker/datepicker.component';
 import { fadeIn } from './../animate/fadeIn';
 import { handleMask } from './../animate/handleMask';
@@ -9,6 +9,41 @@ import { handleMask } from './../animate/handleMask';
   animations: [fadeIn, handleMask]
 })
 export class HotelComponent implements OnInit {
+  public showPage: string = "ht-predit";
+
+  handleShowPage(e){
+    var obj = e.target.id
+    
+    this.showPage = obj.toString();
+
+  }
+
+
+
+
+
+
+  // 修改当前日期
+  @Input() tomTime;
+
+  private data ;
+
+  public todayTime: string = "0" + (new Date().getMonth()+1).toString() + "月" +  new Date().getDate().toString() + "日" + " 今日";
+  public tomorrow: string = "0" + (new Date().getMonth()+1).toString() + "月" +  (new Date().getDate() + 1).toString() + "日";;
+  onVoted(e) {
+    console.log(e);
+    this.closeAllPanel();
+    if(this.data || this.data == 1){ 
+      this.tomorrow = e.tomorrow; 
+    }else{
+      this.todayTime = e.time; 
+      this.tomorrow = e.tomorrow; 
+    }
+  }
+  
+ 
+
+
   showOverlay = false;
 
   showOverlayPanel() { 
@@ -20,12 +55,17 @@ export class HotelComponent implements OnInit {
   }
   // 日期控件
   public handleDate: boolean = false;
-  showDate(){
+  showDate(tomTime){
+    if(tomTime){
+      this.data = 1;
+    }
     this.showOverlayPanel()
     this.handleDate = true;
   }
 
-  constructor() { }
+  constructor() { 
+    
+   }
 
   ngOnInit() {
   }

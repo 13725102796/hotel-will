@@ -1,0 +1,51 @@
+.clearfix:before,.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+
+.htl-title {
+    padding-left: .6rem;
+    /*border: 1px solid #e5e5e5;*/
+    color: #999;
+    background: #f4f4f4;
+}
+.htl-content {
+    padding: .24rem .6rem;
+}
+.service-img {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}
+.service-desc{
+    margin-top: .1rem;
+    
+}
+.htl-content ul li {
+    float: left;
+    text-align: center;
+    display: inline;
+    width: 4rem;
+    margin-top: .2rem;
+    margin-right: .2rem;
+    color: #999;
+}
+.htl-content ul {
+    padding: .24rem;
+}
+.htl-intro {
+    color: #666;
+    padding: .4rem 0;
+}
+.htl-intro .htl-content ul li {
+    width: 45%;
+    text-align: left;
+}
+
+
+
+

@@ -186,8 +186,13 @@ section{
 
 /*ht-predit*/
 .ht-predit {
-    width: 30%;
+    width: 26%;
     padding: 1rem .8rem;
+    text-align: center;
+    border-radius: 3px;
+}
+.ht-active{
+    background: white;
 }
 
 .bookroom-title-icon {
