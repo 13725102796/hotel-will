@@ -20,19 +20,21 @@ export class HotelComponent implements OnInit {
 
   // 修改当前日期
   @Input() tomTime;
-  private data ;
+  private data:any = {
+    id: '',
+    usewho: new Date()
+  };
 
   public todayTime: string = "0" + (new Date().getMonth()+1).toString() + "月" +  new Date().getDate().toString() + "日" + " 今日";
   public tomorrow: string = "0" + (new Date().getMonth()+1).toString() + "月" +  (new Date().getDate() + 1).toString() + "日";;
   onVoted(e) {
-    console.log(e);
     this.closeAllPanel();
-    console.log(this.data);
-    if(this.data && this.data == 1){ 
+    if(this.data.id == 1){ 
       this.tomorrow = e.tomorrow; 
     }else{
       this.todayTime = e.time; 
       this.tomorrow = e.tomorrow; 
+      this.data.usewho = e.usewho;
     }
   }
 
@@ -48,7 +50,7 @@ export class HotelComponent implements OnInit {
   // 日期控件
   public handleDate: boolean = false;
   showDate(type){
-    this.data = type;
+    this.data.id = type;
     console.log(this.data)
     this.showOverlayPanel()
     this.handleDate = true;

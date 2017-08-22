@@ -12,18 +12,18 @@ export class DatepickerComponent {
   //   this.onVoted.emit(agreed);
   //   this.voted = true;
   // }
-  public usewho: Date = new Date() ;
+  public usewho: Date = new Date();
   public todayInit: Date = new Date();
   ngOnInit() {
-      if(this.tomTime && this.tomTime == 1){
-        this.usewho = this.dt;
-        console.log(this.usewho)
-      }
+    if (this.tomTime && this.tomTime.id == 1) {
+      this.usewho = this.tomTime.usewho;
+      console.log(this.usewho)
+    }
   }
   todayTime() {
     var Time = {}
-    console.log(this.tomTime)
-    if (this.tomTime && this.tomTime == 1) {
+    console.log(this.tomTime.id)
+    if (this.tomTime && this.tomTime.id == 1) {
       var month = (this.dt.getMonth() + 1).toString();
       month = "0" + month;
       var tomorrow = (this.dt.getDate()).toString();
@@ -36,12 +36,30 @@ export class DatepickerComponent {
       var month = (this.dt.getMonth() + 1).toString();
       month = "0" + month;
       var day = (this.dt.getDate()).toString();
-      var tomorrow = (this.dt.getDate() + 1).toString();
       var time = month + "月" + day + "日";
-      var tomorrowTime = month + "月" + tomorrow + "日";
+      // 获取当前月的最后一天
+      var date = new Date(this.dt);
+      var currentMonth = date.getMonth();
+      var nextMonth = ++currentMonth;
+      var nextMonthFirstDay = new Date(date.getFullYear(), nextMonth, 1);
+      var oneDay = 1000 * 60 * 60 * 24;
+      var monthLastDay = new Date(nextMonthFirstDay.getTime() - oneDay);
+      console.log(monthLastDay)
+      var tomorrowTime ='';
+      if (day == monthLastDay.getDate().toString()) {
+        tomorrowTime = nextMonth + "月" + "1日"
+      } else {
+        var tomorrow = (this.dt.getDate() + 1).toString();
+        tomorrowTime = month + "月" + tomorrow + "日";
+      }
+      //获取对应时间撮，然后 + 一天时间
+      var usewho = new Date(this.dt.getTime() + 1000 * 60 * 60 * 24)
+      usewho = new Date(usewho)
+
       Time = {
         time: time,
-        tomorrow: tomorrowTime
+        tomorrow: tomorrowTime,
+        usewho: usewho
       }
       this.onVoted.emit(Time);
     }
@@ -74,6 +92,7 @@ export class DatepickerComponent {
       { date: this.tomorrow, status: 'full' },
       { date: this.afterTomorrow, status: 'partially' }
     ];
+    moment.locale('zh-cn');
   }
 
   public getDate(): number {
