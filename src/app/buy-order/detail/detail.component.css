@@ -1,0 +1,84 @@
+.header {
+  padding: 1.2rem 2rem;
+  color: #A5A5A5;
+  font-size: 1rem;
+}
+.header div {
+  padding: 0.4rem 0;
+}
+.red-color{
+  color: #FA978C
+}
+.detail-body{
+  
+  padding: 0 .8rem;
+  
+}
+.detail-order{
+  width: 100%;
+  
+}
+.detail-desc {
+  height: 4.5rem;
+  background: #1DAA97;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  padding: 0.6rem 0.6rem;
+}
+.room-type{
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.room-msg {
+  margin-top: 0.4rem; 
+  font-size: 1rem;
+}
+.buyer-msg{
+  height: 5rem;
+  background: #fff;
+  border-radius:0 0 10px 10px;
+  font-size: 1rem;
+  padding: 0.1rem 0.6rem;
+}
+.buyer-msg div{
+  margin: 0.1rem 0;
+}
+.buyer-name{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color:#757575;
+  
+}
+.buyer-phone{
+  color: #B8B8B8;
+}
+.right{
+  float: right;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4rem;
+  background: #fff;
+  
+  width: 100%;
+}
+.pay-price {
+  color: #BEBEBE;
+  float: left;
+  font-size: 1rem;
+  height: 4rem;
+  line-height: 4rem;
+  margin-left: 0.8rem;  
+}
+.pay-btn {
+  width: 30%;
+  background: #1DAA97;
+  color: #fff;
+  border: none;
+  float: right;
+  height: 2.5rem;
+  margin: 0.7rem 0.8rem;
+}
