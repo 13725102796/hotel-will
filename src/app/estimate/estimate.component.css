@@ -224,10 +224,11 @@ textarea{
 }
 
 textarea.input-weak {
-    padding: 0;
+    padding: 0.8rem 0rem!important;
     margin: -.2em 0;
     line-height: 1.41;
     height: 2.8em;
+    text-align: center;
 }
 
 a.react, label.react {
@@ -298,6 +299,7 @@ input.choose.mt.kv-v {
 
 .textHeight{
   height: 4rem;
+  padding: 0 1rem;
 }
 
 #form{
@@ -314,7 +316,7 @@ input.choose.mt.kv-v {
   height: 2.5rem;
   margin-top: 1rem;
   width: 30%;
-  border-radius: .06rem;
+  border-radius: .2rem;
   color: #fff;
   border: 0;
   background-color: #06c1ae;

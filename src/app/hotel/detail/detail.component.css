@@ -31,11 +31,12 @@
     display: inline;
     width: 4rem;
     margin-top: .2rem;
-    margin-right: .2rem;
+    margin-right: .7rem;
     color: #999;
 }
 .htl-content ul {
     padding: .24rem;
+    text-align: center;
 }
 .htl-intro {
     color: #666;
