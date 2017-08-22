@@ -32,11 +32,11 @@
 <section>
   <div class="datebox">
     <div class="datebox-wrap">
-      <div class="datebox-left" (click)="showDate()" @fadeIn>
+      <div #dateBoxLeft class="datebox-left" id="getToday" (click)="showDate(0)" @fadeIn>
         <div class="datebox-desc"> 入住 </div>
         <div class="datebox-time"> {{todayTime}} </div>
       </div>
-      <div class="datebox-right" (click)="showDate(tomorrow)" @fadeIn>
+      <div #dateBoxRight class="datebox-right" id="getTomorrow" (click)="showDate(1)" @fadeIn>
         <div class="datebox-desc"> 离店 </div>
         <div class="datebox-time"> {{tomorrow}} </div>
       </div>

@@ -4,7 +4,7 @@
     <pre class="card-block card-header">当前选择的时间是： <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em><div class="vue-component-calendar-complete-button"> <a href="javascript:;" (click)="todayTime()">完成</a> </div></pre>
   </div>
   <div style="display:inline-block; min-height:290px;width:100%; text-align: center;">
-    <datepicker [minDate]=" usewho ? todayInit : tomorrowInit " [onlyCurrentMonth]="true" [showWeeks]="false" [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled" ></datepicker>
+    <datepicker [minDate]="usewho" [onlyCurrentMonth]="true" [showWeeks]="false" [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled" ></datepicker>
   </div>
   <!--<hr />-->
   <!--<button type="button" class="btn btn-sm btn-info" (click)="today()">Today</button>

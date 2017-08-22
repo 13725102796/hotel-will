@@ -12,18 +12,18 @@ export class DatepickerComponent {
   //   this.onVoted.emit(agreed);
   //   this.voted = true;
   // }
-  public usewho: boolean = false;
+  public usewho: Date = new Date() ;
   public todayInit: Date = new Date();
-  public tomorrowInit = new Date().setTime(new Date().getTime()+24*60*60*1000);
   ngOnInit() {
-      this.usewho = false;
-      if(this.tomTime || this.tomTime == 1){
-        this.usewho = true;
+      if(this.tomTime && this.tomTime == 1){
+        this.usewho = this.dt;
+        console.log(this.usewho)
       }
   }
   todayTime() {
     var Time = {}
-    if (this.tomTime || this.tomTime == 1) {
+    console.log(this.tomTime)
+    if (this.tomTime && this.tomTime == 1) {
       var month = (this.dt.getMonth() + 1).toString();
       month = "0" + month;
       var tomorrow = (this.dt.getDate()).toString();
