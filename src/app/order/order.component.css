@@ -1,0 +1,62 @@
+.color-red{
+  color: #EF8B36;
+}
+.right{
+  float: right;
+}
+.color-ash{
+  color: #ccc!important;
+}
+
+.cancel-order{
+  padding: .8rem .8rem;
+  margin: .6rem 1rem;
+  border-radius: 5px;
+  background: white;
+
+}
+.cancel-order > div {
+  margin-bottom: .3rem; 
+}
+.header-order{
+  font-size: 1.2rem;
+  color: black;
+  font-weight: 500;
+}
+.hotel-price{
+  float:right;
+}
+.ht-title{
+  position: relative;
+  display: block;
+  padding-left: 1.8rem; 
+}
+
+.hotel-icon{
+  position: absolute;
+  left: 0;
+  top:0;
+  background: url(/../../assets/img/hotel-icon.jpg) no-repeat ;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  background-size:cover;
+}
+
+.body-order{
+  font-size: 1rem;
+  color: #8F8F8F;
+
+}
+
+.footer-order button{
+  padding: .4rem .6rem;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background: #51C3DE;
+  margin-left: .3rem;
+  float: right; 
+  font-size: .8rem;
+
+}

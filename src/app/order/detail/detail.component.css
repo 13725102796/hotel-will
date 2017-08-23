@@ -1,0 +1,127 @@
+.color-blue {
+  color: #438AFE;
+}
+.color-red {
+  color: #F84304;
+}
+.h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.font-size {
+  font-size: 1rem;
+}
+.right {
+  float: right;
+}
+
+.order-header{
+  padding: .8rem 1.2rem;
+  background: #fff; 
+  margin-bottom: 1rem; 
+}
+.common-desc {
+  padding-bottom: .8rem;
+  border-bottom: 2px solid #438AFE; 
+}
+.common-h {
+  float: right;
+}
+
+.pay-desc{
+  margin-top: .8rem;
+
+}
+.price-order {
+  padding-left: .4rem;
+  font-weight: bold;
+}
+.price-size {
+  font-size: 1.4rem;
+}
+.price-detail{
+  line-height: 2.5rem;
+}
+.pay-btn {
+  margin-top: .8rem; 
+  text-align: center;
+}
+
+.pay-btn button {
+    border: 1px solid #438AFE;
+    border-radius: 5px;
+    padding: .6rem 14%;
+    background: none;
+    color: #438AFE;
+    font-size: 1rem;
+    margin-right: 3%;
+}
+
+.ht-name{
+  font-size: 1rem;
+  font-weight: bold;
+}
+.ht-name span {
+  font-size: .8rem;
+  float: right;
+}
+.color-ash{
+  color: #575C61;
+}
+.order-header .color-ash{
+  padding: .4rem 0;
+}
+.color-black {
+  color: #000;
+}
+.line-way {
+  padding-left: .8rem; 
+}
+.line-icon{
+  width: 10%;
+  display: block;
+  float: left;
+}
+.line-way ul li span {
+  width: 30%;
+  display: block;
+  float: left;
+}
+.line-way ul li{
+  padding: 1rem 0; 
+}
+
+.room-desc {
+  margin: .4rem; 
+  font-size: .8rem;
+  font-weight: bold;
+}
+.time-in {
+  text-align: center;
+  width: 6rem;
+}
+
+.date-in{
+  font-size: 1.2rem;
+}
+.left {
+  float: left;
+}
+.night-num {
+  padding: .8rem 1rem;
+}
+.use-time {
+  margin: .6rem 0; 
+}
+
+.buyer-msg ul li{
+  color: #575C61;
+  font-weight: bold;
+  font-size: .8rem;
+  padding-left: .8rem;
+  padding-bottom: .4rem;  
+}
+.desc-msg {
+  color: black;
+  padding-left: 4rem; 
+}
