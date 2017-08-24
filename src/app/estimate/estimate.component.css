@@ -221,6 +221,7 @@ textarea{
  textarea.input-weak {
     height: 5.8em;
     text-indent: 0;
+    background: #F5F5F5;
 }
 
 textarea.input-weak {

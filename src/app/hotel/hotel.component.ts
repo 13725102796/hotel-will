@@ -56,6 +56,11 @@ export class HotelComponent implements OnInit {
     this.handleDate = true;
   }
 
+  //预定跳转
+  hrefPredit(){
+    
+  }
+
   constructor() { 
     
    }

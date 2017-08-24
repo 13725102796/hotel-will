@@ -44,8 +44,8 @@
     <div class="datebox-count"> 共1晚 </div>
   </div>
 </section>
-<section>
-  <div class="clearfix">
+<section class="bg-white">
+  <div class="clearfix banner-h">
   <div class="ht-predit left" [class.ht-active]="showPage === 'ht-predit'"  id="ht-predit" (click)="handleShowPage($event)">
     <!--<i class="bookroom-title-icon">订</i> 预订&nbsp;[8]-->
     预订&nbsp;[8]
@@ -72,7 +72,7 @@
       <div class="room-right">
         <div class="room-right-center">
           <div class="room-right-redtip" style="display: none;"> </div>
-          <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> <button class="room-button" type="button" name="button">预订</button> </div>
+          <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> <button class="room-button" type="button" name="button" (click)="hrefPredit()">预订</button> </div>
       </div>
     </li>
     <li class="item room">

@@ -187,12 +187,12 @@ section{
 /*ht-predit*/
 .ht-predit {
     width: 26%;
-    padding: 1rem .8rem;
+    padding: .6rem .8rem;
     text-align: center;
     border-radius: 3px;
 }
 .ht-active{
-    background: white;
+    color: #06C1AE;
 }
 
 .bookroom-title-icon {
@@ -312,4 +312,15 @@ section{
     padding: .3rem .6rem;
     border: .2rem solid #2eb6a8;
     border-radius: .6rem;
+}
+.banner-h {
+    height: 3rem;
+    
+}
+
+.bg-white{
+    background: white;
+}
+.ht-detail, .ht-common {
+    /* border-left:1px solid black; */
 }
