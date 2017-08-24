@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { BuyOrderComponent } from './buy-order/buy-order.component';
+// import { BuyOrderComponent } from './buy-order/buy-order.component';
 import { EstimateComponent } from './estimate/estimate.component';
 
 
@@ -24,7 +24,7 @@ import { DetailComponent } from './hotel/detail/detail.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BuyOrderComponent,
+    // BuyOrderComponent,
     EstimateComponent,
     HotelComponent,
     DatepickerComponent,

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+//import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { DetailComponent } from './detail/detail.component';
 import { BuyOrderRouting } from './buy-order.routing';
@@ -10,7 +11,10 @@ import { BuyOrderComponent } from './buy-order.component';
     CommonModule,
     BuyOrderRouting
   ],
-  declarations: [DetailComponent]
+  declarations: [
+    DetailComponent,
+    BuyOrderComponent
+  ]
 })
 export class BuyOrderModule { 
 

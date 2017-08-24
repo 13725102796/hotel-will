@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { fadeIn,handleMask } from './../animate/fadeIn';
 import { HotelService } from './../hotel/hotel.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-buy-order',
   templateUrl: './buy-order.component.html',
@@ -10,7 +11,7 @@ import { HotelService } from './../hotel/hotel.service';
 export class BuyOrderComponent implements OnInit {
   // @Input() dataNum;
   
-  public arr = [1, 2, 3];
+  // public arr = [1, 2, 3];
 
   showOverlay = false;
   showRoomNumSelector = false;
@@ -18,9 +19,14 @@ export class BuyOrderComponent implements OnInit {
   
   constructor(
     private hotelService:HotelService,
+    private router: Router
   ) { }
 
   ngOnInit() {
+    if (!this.hotelService.data){
+      this.hotelService.data = { }
+      this.router.navigate(['./hotel']);
+    }
   }
 
   showOverlayPanel() {
@@ -71,6 +77,9 @@ export class BuyOrderComponent implements OnInit {
     this.showPriceDesc = this.showPriceDesc ? false : true;
     this.showOverlay = this.showOverlay ? false : true;
   }
+
+  //表单验证及数据存储输出
+  
 
 }
 
