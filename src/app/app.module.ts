@@ -13,6 +13,9 @@ import { BuyOrderModule } from './buy-order/buy-order.module';
 import { OrderModule } from './order/order.module';
 import { HotelComponent } from './hotel/hotel.component';
 
+// 服务
+import { HotelService } from './hotel/hotel.service';
+
 //ngx-boostrap
 import { DatepickerModule } from 'ngx-bootstrap';
 import { DatepickerComponent } from './datepicker/datepicker.component';
@@ -38,7 +41,7 @@ import { DetailComponent } from './hotel/detail/detail.component';
     FormsModule,
     OrderModule
   ],
-  providers: [],
+  providers: [HotelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

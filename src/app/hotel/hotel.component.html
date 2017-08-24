@@ -57,8 +57,25 @@
      酒店评价
   </div>
   </div>
-  <ul *ngIf="showPage === 'ht-predit'">
-    <li class="item room">
+  <ul *ngIf="showPage === 'ht-predit'" >
+    <li class="item room" *ngFor="let item of roomType.data">
+      <div class="room-left">
+        <p class="room-left-title">{{item.name}} <span class="textico-gray" style="display: none;"></span> </p>
+        <ul class="tags">
+          <li class="tags-item" style="color: rgb(153, 153, 153);">{{item.desc}}</li>
+        </ul>
+        <div class="room-desc"> 现已过可取消时间，不可取消 </div>
+        <h2 class="price">¥ <span class="price-num">{{item.price}}</span> </h2>
+        <ul style="display: none;"> </ul>
+      </div>
+      <div class="room-right">
+        <div class="room-right-center">
+          <div class="room-right-redtip" style="display: none;"> </div>
+          <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> 
+          <button class="room-button" type="button" name="button" id="{{item.id}}" (click)="hrefPredit(item.id)">预订</button> </div>
+      </div>
+    </li>
+    <!--<li class="item room">
       <div class="room-left">
         <p class="room-left-title">标准大床房 <span class="textico-gray" style="display: none;"></span> </p>
         <ul class="tags">
@@ -72,7 +89,7 @@
       <div class="room-right">
         <div class="room-right-center">
           <div class="room-right-redtip" style="display: none;"> </div>
-          <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> <button class="room-button" type="button" name="button" (click)="hrefPredit()">预订</button> </div>
+          <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> <button class="room-button" type="button" name="button">预订</button> </div>
       </div>
     </li>
     <li class="item room">
@@ -91,24 +108,7 @@
           <div class="room-right-redtip" style="display: none;"> </div>
           <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> <button class="room-button" type="button" name="button">预订</button> </div>
       </div>
-    </li>
-    <li class="item room">
-      <div class="room-left">
-        <p class="room-left-title">标准大床房 <span class="textico-gray" style="display: none;"></span> </p>
-        <ul class="tags">
-          <li class="tags-item" style="color: rgb(153, 153, 153);">不含早</li>
-          <li class="tags-item" style="color: rgb(153, 153, 153);">有窗</li>
-        </ul>
-        <div class="room-desc"> 现已过可取消时间，不可取消 </div>
-        <h2 class="price">¥ <span class="price-num">218</span> </h2>
-        <ul style="display: none;"> </ul>
-      </div>
-      <div class="room-right">
-        <div class="room-right-center">
-          <div class="room-right-redtip" style="display: none;"> </div>
-          <div class="room-right-redtip" style="display: none;"> 仅剩0间 </div> <button class="room-button" type="button" name="button">预订</button> </div>
-      </div>
-    </li>
+    </li>-->
   </ul>
   <ul *ngIf="showPage ==='ht-detail'">
     <app-detail></app-detail>

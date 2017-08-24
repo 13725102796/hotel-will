@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { fadeIn } from './../animate/fadeIn';
-import { handleMask } from './../animate/handleMask';
+import { fadeIn,handleMask } from './../animate/fadeIn';
+import { HotelService } from './../hotel/hotel.service';
 @Component({
   selector: 'app-buy-order',
   templateUrl: './buy-order.component.html',
@@ -16,7 +16,9 @@ export class BuyOrderComponent implements OnInit {
   showRoomNumSelector = false;
   showRoomTimeSelector = false;
   
-  constructor() { }
+  constructor(
+    private hotelService:HotelService,
+  ) { }
 
   ngOnInit() {
   }

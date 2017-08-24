@@ -2,8 +2,8 @@
   <div class="buy-order">
     <div>
       <p class="buy-title">中懋国际大酒店</p>
-      <p class="room-desc"><span>08-15</span>入住， <span>08-16</span>离店，<span>1</span>晚</p>
-      <p class="room-desc"><span>标准大床房-大床</span>，不含早，共￥<span>218</span></p>
+      <p class="room-desc"><span>{{hotelService.data.timeIn}}</span>入住， <span>{{hotelService.data.timeOut}}</span>离店，<span>1</span>晚</p>
+      <p class="room-desc"><span>{{hotelService.data.name}}</span>，{{hotelService.data.desc}}，共￥<span>218</span></p>
     </div>
     <div class="desc-info clearfix">
       <div class="icon-left">
@@ -96,7 +96,7 @@
         <span class="total-desc">总价: <i class="green size">￥{{ showInsur? showNum*(218+11):showNum*218}}</i> <a class="allPrice-desc" (click)="handlePriceDesc()">明细</a></span>
       </div>
       <div class="btn-submit">
-        <a class="white" routerLink="./detail" routerLinkActive="white"><span>提交订单</span></a>
+        <span (click)="hrefDetail()">提交订单</span>
       </div>
     </div>
   </section>
@@ -106,7 +106,7 @@
 <section *ngIf="showRoomNumSelector" class="rm-alert detail" @fadeIn>
   <p class="header">请选择房间数量</p>
   <ul (click)="selected($event)">
-    <li class="cell" *ngFor="let item of arr, let i = index">
+    <li class="cell" *ngFor="let item of hotelService.data.nowRoomNum, let i = index">
       <div id="rm-item{{i+1}}" class="rm-item" [ngStyle]="{'color': i+1==showNum ? '#06c1ae' : ''}"><span>{{item}}间</span> <i [ngStyle]="{'display': i+1==showNum ? 'block': 'none'}" class="rm-icon"></i></div>
     </li>
     <!--<li class="cell">
@@ -137,3 +137,4 @@
 </section>
 <!-- 遮罩层 -->
 <div *ngIf="showOverlay" class="overlay" (click)="closeAllPanel()" @handleMask></div>
+
