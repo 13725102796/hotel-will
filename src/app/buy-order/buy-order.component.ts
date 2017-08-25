@@ -79,7 +79,12 @@ export class BuyOrderComponent implements OnInit {
   }
 
   //表单验证及数据存储输出
-  
+  // public buyerMsg: object;
+  // public buyerName: string;
+  // public buyerPhone: number;
+  hrefDetail(){
+    this.router.navigate(['buyorder/detail'])
+  }
 
 }
 

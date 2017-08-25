@@ -5,11 +5,12 @@ import { DetailComponent } from './detail/detail.component';
 import { BuyOrderRouting } from './buy-order.routing';
 import { Routes, RouterModule } from '@angular/router';
 import { BuyOrderComponent } from './buy-order.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
-    BuyOrderRouting
+    BuyOrderRouting,
+    FormsModule
   ],
   declarations: [
     DetailComponent,
