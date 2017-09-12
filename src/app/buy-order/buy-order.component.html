@@ -106,7 +106,7 @@
 <section *ngIf="showRoomNumSelector" class="rm-alert detail" @fadeIn>
   <p class="header">请选择房间数量</p>
   <ul (click)="selected($event)">
-    <li class="cell" *ngFor="let item of hotelService.data.nowRoomNum, let i = index">
+    <li class="cell padding" *ngFor="let item of hotelService.data.nowRoomNum, let i = index">
       <div id="rm-item{{i+1}}" class="rm-item" [ngStyle]="{'color': i+1==showNum ? '#06c1ae' : ''}"><span>{{item}}间</span> <i [ngStyle]="{'display': i+1==showNum ? 'block': 'none'}" class="rm-icon"></i></div>
     </li>
     <!--<li class="cell">
@@ -121,16 +121,16 @@
 <section *ngIf="showRoomTimeSelector" class="rm-alert detail" @fadeIn>
   <p class="header">到店时间（不影响酒店留房）</p>
   <ul (click)="selected($event)">
-    <li class="cell">
+    <li class="cell padding">
       <div id="time-item1" class="rm-item" [ngStyle]="{'color': 1==showTime ? '#06c1ae' : ''}"><span>18：00之前</span> <i [ngStyle]="{'display': 1==showTime ? 'block': 'none'}" class="rm-icon"></i></div>
     </li>
-    <li class="cell">
+    <li class="cell padding">
       <div id="time-item2" class="rm-item" [ngStyle]="{'color': 2==showTime ? '#06c1ae' : ''}"><span>20：00之前</span> <i [ngStyle]="{'display': 2==showTime ? 'block': 'none'}" class="rm-icon"></i></div>
     </li>
-    <li class="cell">
+    <li class="cell padding">
       <div id="time-item3" class="rm-item" [ngStyle]="{'color': 3==showTime ? '#06c1ae' : ''}"><span>23：59之前</span> <i [ngStyle]="{'display': 3==showTime ? 'block': 'none'}" class="rm-icon"></i></div>
     </li>
-    <li class="cell">
+    <li class="cell padding">
       <div id="time-item4" class="rm-item" [ngStyle]="{'color': 4==showTime ? '#06c1ae' : ''}"><span>次日凌晨06：00之前</span> <i [ngStyle]="{'display': 4==showTime ? 'block': 'none'}" class="rm-icon"></i></div>
     </li>
   </ul>
